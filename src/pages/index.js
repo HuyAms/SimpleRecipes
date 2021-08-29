@@ -1,7 +1,7 @@
 import React from "react"
-import {Link} from 'gatsby'
 import Layout from '../components/Layout'
 import {StaticImage} from "gatsby-plugin-image"
+import AllRecipes from "../components/AllRecipe"
 
 export default function Home() {
   return (
@@ -17,6 +17,7 @@ export default function Home() {
               </div>
             </div>
           </header>
+          <AllRecipes/>
         </main>
       </Layout>
     </div>
