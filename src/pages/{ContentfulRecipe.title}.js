@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from "gatsby"
 import {GatsbyImage, getImage} from "gatsby-plugin-image"
 import {BsClockHistory, BsClock, BsPeople} from "react-icons/all"
+import slugify from "slugify"
 
 const RecipeTemplate = ({data}) => {
 
@@ -35,8 +36,10 @@ const RecipeTemplate = ({data}) => {
            </div>
            <p className="recipe-tags">
              Tags: {tags.map((tag, index) => {
-               return (
-                 <Link to={`/${tag}`} key={index}>{tag}</Link>
+             const tagSlug = slugify(tag, {lower: true})
+
+             return (
+                 <Link to={`tags/${tagSlug}`} key={index}>{tag}</Link>
                )
            })}
            </p>
